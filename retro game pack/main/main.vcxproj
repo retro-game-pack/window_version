@@ -82,7 +82,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <ExternalIncludePath>C:\Users\gwon0\source\repos\window_version\retro game pack\game_util;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Users\gwon0\source\repos\window_version\retro game pack\game util;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>C:\Users\gwon0\source\repos\window_version\retro game pack\x64\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -141,11 +141,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>game_util.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>game util.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="main_frame.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main_frame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
