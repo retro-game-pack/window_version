@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include "main_frame.h"
 
 int main() {
-	printf("Hello, World!");
+	printMainFrameMenu();
 
 	return 0;
 }
