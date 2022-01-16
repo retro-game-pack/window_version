@@ -3,3 +3,8 @@
 void clearConsole() {
 	system("cls");
 }
+
+void setTextColor(Color color)
+{
+	SetConsoleTextAttribute(COUT, color);
+}
