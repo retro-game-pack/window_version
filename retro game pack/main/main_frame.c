@@ -3,7 +3,7 @@
 void printMainFrameMenu()
 {
 	clearConsole();
-	printf("MINI GAME\n\n");
-	printf("¢º TIC TAC TOE\n");
-	printf("¢¹ EXIT");
+	printWithColor(YELLOW, "MINI GAME\n\n");
+	printWithColor(WHITE, "¢º TIC TAC TOE\n");
+	printWithColor(WHITE, "¢¹ EXIT\n");
 }

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <Windows.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 #define COUT GetStdHandle(STD_OUTPUT_HANDLE)
 
@@ -11,3 +13,4 @@ typedef enum {
 
 void clearConsole();
 void setTextColor(Color color);
+void printWithColor(Color color, char* msg, ...);
