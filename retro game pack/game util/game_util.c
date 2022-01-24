@@ -35,3 +35,12 @@ int changeMenu(int currnetMenuIndex, int maxMenuIndex)
 
 	return currnetMenuIndex;
 }
+
+void setCursor(Coordinates coordinates) {
+	COORD cursor;
+
+	cursor.X = coordinates.x;
+	cursor.Y = coordinates.y;
+
+	SetConsoleCursorPosition(COUT, cursor);
+}
