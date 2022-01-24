@@ -1,6 +1,7 @@
 #include "game_util.h"
 
-void clearConsole() {
+void clearConsole() 
+{
 	system("cls");
 }
 
@@ -17,4 +18,20 @@ void printWithColor(Color color, char* msg, ...)
 	va_start(ap, msg);
 	vprintf(msg, ap);
 	va_end(ap);
+}
+
+int changeMenu(int currnetMenuIndex, int maxMenuIndex)
+{
+	char key = getch();
+
+	if (('w' == key || 'W' == key) && currnetMenuIndex > 0)
+	{
+		currnetMenuIndex--;
+	}
+	else if (('s' == key || 'S' == key) && currnetMenuIndex < maxMenuIndex)
+	{
+		currnetMenuIndex++;
+	}
+
+	return currnetMenuIndex;
 }
