@@ -20,23 +20,28 @@ void printWithColor(Color color, char* msg, ...)
 	va_end(ap);
 }
 
-int changeMenu(int currnetMenuIndex, int maxMenuIndex)
+int* changeMenu(int currnetMenuIndex, int maxMenuIndex)
 {
+	int returns[2] = { currnetMenuIndex, 0};
+
 	char key = getch();
 
 	if (('w' == key || 'W' == key) && currnetMenuIndex > 0)
 	{
-		currnetMenuIndex--;
+		returns[0]--;
+		returns[1] = UP;
 	}
 	else if (('s' == key || 'S' == key) && currnetMenuIndex < maxMenuIndex)
 	{
-		currnetMenuIndex++;
+		returns[0]++;
+		returns[1] = DOWN;
 	}
 
-	return currnetMenuIndex;
+	return returns;
 }
 
-void setCursor(Coordinates coordinates) {
+void setCursor(Coordinates coordinates) 
+{
 	COORD cursor;
 
 	cursor.X = coordinates.x;
