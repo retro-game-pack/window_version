@@ -15,7 +15,8 @@ typedef enum _Color
 
 typedef enum _ButtonStatus
 {
-	UP = 0,
+	NONE = -1,
+	UP,
 	DOWN,
 } ButtonStatus;
 
@@ -30,4 +31,4 @@ void setTextColor(Color color);
 void setCursor(Coordinates coordinates);
 void printWithColor(Color color, char* msg, ...);
 int* changeMenu(int menuManager, int maxMenuIndex);
-void moveMenuPoint(int startY, int currentIndex, ButtonStatus buttonStatus);
+void moveMenuPoint(int startY, int* menuStatus);

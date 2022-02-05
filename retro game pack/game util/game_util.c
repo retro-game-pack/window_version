@@ -22,7 +22,7 @@ void printWithColor(Color color, char* msg, ...)
 
 int* changeMenu(int currnetMenuIndex, int maxMenuIndex)
 {
-	int returns[2] = { currnetMenuIndex, 0};
+	int returns[2] = { currnetMenuIndex, -1};
 
 	char key = getch();
 
@@ -40,9 +40,13 @@ int* changeMenu(int currnetMenuIndex, int maxMenuIndex)
 	return returns;
 }
 
-void moveMenuPoint(int startY, int currentIndex, ButtonStatus buttonStatus)
+void moveMenuPoint(int startY, int* menuStatus)
 {
-	Coordinates coord = { 0, startY + currentIndex };
+	ButtonStatus buttonStatus = menuStatus[1];
+
+	if (buttonStatus == NONE) return;
+
+	Coordinates coord = { 0, startY + menuStatus[0]};
 	setCursor(coord);
 
 	printf("¢º");
