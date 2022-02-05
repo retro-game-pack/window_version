@@ -40,6 +40,27 @@ int* changeMenu(int currnetMenuIndex, int maxMenuIndex)
 	return returns;
 }
 
+void moveMenuPoint(int startY, int currentIndex, ButtonStatus buttonStatus)
+{
+	Coordinates coord = { 0, startY + currentIndex };
+	setCursor(coord);
+
+	printf("¢º");
+
+	switch (buttonStatus)
+	{
+	case UP:
+		coord.y++;
+		break;
+	case DOWN:
+		coord.y--;
+		break;
+	}
+
+	setCursor(coord);
+	printf("¢¹");
+}
+
 void setCursor(Coordinates coordinates) 
 {
 	COORD cursor;

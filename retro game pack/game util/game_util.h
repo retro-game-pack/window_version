@@ -30,3 +30,4 @@ void setTextColor(Color color);
 void setCursor(Coordinates coordinates);
 void printWithColor(Color color, char* msg, ...);
 int* changeMenu(int menuManager, int maxMenuIndex);
+void moveMenuPoint(int startY, int currentIndex, ButtonStatus buttonStatus);
