@@ -18,6 +18,7 @@ typedef enum _ButtonStatus
 	NONE = -1,
 	UP,
 	DOWN,
+	ENTER,
 } ButtonStatus;
 
 typedef struct _Coordinates

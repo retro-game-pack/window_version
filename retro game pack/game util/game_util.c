@@ -36,6 +36,9 @@ int* changeMenu(int currnetMenuIndex, int maxMenuIndex)
 		returns[0]++;
 		returns[1] = DOWN;
 	}
+	else if ('\r' == key) {
+		returns[1] = ENTER;
+	}
 
 	return returns;
 }
@@ -44,7 +47,7 @@ void moveMenuPoint(int startY, int* menuStatus)
 {
 	ButtonStatus buttonStatus = menuStatus[1];
 
-	if (buttonStatus == NONE) return;
+	if (buttonStatus == NONE || buttonStatus == ENTER) return;
 
 	Coordinates coord = { 0, startY + menuStatus[0]};
 	setCursor(coord);
