@@ -12,7 +12,23 @@ void printMainFrameMenu()
 
 void changeMainMenu()
 {
-	int* returns = changeMenu(mainMenu, MAX_MAIN_MENU_INDEX);
-	mainMenu = returns[0];
-	moveMenuPoint(START_MAIN_MENU_COORD_Y, returns);
+	int* menuStatus = changeMenu(mainMenu, MAX_MAIN_MENU_INDEX);
+	mainMenu = menuStatus[0];
+
+	if (menuStatus[1] == ENTER)
+		selectMainMenu(menuStatus[0]);
+	else
+		moveMenuPoint(START_MAIN_MENU_COORD_Y, menuStatus);
+}
+
+void selectMainMenu(MainMenu mainMenu)
+{
+	switch (mainMenu)
+	{
+	case TIC_TAC_TOE_MENU:
+		printTicTacToeMenu();
+		break;
+	case EXIT:
+		exit(0);
+	}
 }
